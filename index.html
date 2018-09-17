@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<style>
+.parent-wrapper {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+.parent {
+  display: flex;
+  font-size: 0;
+  flex-wrap: wrap;
+
+}
+
+.child {
+    display: inline-block;
+    background: blue;
+    border: 1px solid white;
+    flex-grow: 1;
+    height: 100px;
+    width: 100px;
+}
+</style>
+<body>
+  <div class="parent-wrapper">
+    <div class="parent">
+     <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      <div class="child" style="background-color:blue;"></div>
+      
+     
+    </div>
+  </div>
+</body>
+<script>
+(function(){
+		
+	setInterval(changeColor, 2000);
+  var childArray = document.getElementsByClassName('child');
+  
+  for (var i = 0; i < childArray.length; i++) {
+    childArray[i].addEventListener('click', function(){
+  	this.style.backgroundColor === "red"?console.log("SCORED"):console.log("NOT SCORED")
+   
+  }, false);
+}
+  
+  
+  function changeColor(){
+  
+  	var randomBox = childArray[Math.floor(Math.random() * 16)];
+    randomBox.style.backgroundColor = "red";
+    
+    setTimeout(function(){ randomBox.style.backgroundColor = "blue" }, 2000);
+    
+    
+  }
+  
+})()
+</script>
+</html>
